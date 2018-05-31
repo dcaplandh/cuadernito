@@ -1,18 +1,5 @@
 @include('menu')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBlT432SDJL7zn6ALXCNeI96UaaTLVyz-8",
-    authDomain: "cuadernito-ba068.firebaseapp.com",
-    databaseURL: "https://cuadernito-ba068.firebaseio.com",
-    projectId: "cuadernito-ba068",
-    storageBucket: "cuadernito-ba068.appspot.com",
-    messagingSenderId: "667313446859"
-  };
-  firebase.initializeApp(config);
-  
   var ref = firebase.database().ref();
 
   ref.on("value", function(snapshot) {
@@ -30,7 +17,7 @@
        var celular = snapshot.val().usuarios[i].responsables[0].celular;
        
     
-       var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="./storage/images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+'</h5><p class="card-text">'+comision+'</p><a href="#" class="btn btn-primary">Tel: '+celular+'</a></div></div>';
+       var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+'</h5><p class="card-text">'+comision+'</p><a href="#" class="btn btn-primary">Tel: '+celular+'</a></div></div>';
        $('div.row.alumnos').append(alumno);
        }
        

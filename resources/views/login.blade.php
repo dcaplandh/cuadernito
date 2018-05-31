@@ -18,9 +18,9 @@
 
 <div class="container">
     <div class="row header-login">
-        <img src="./storage/images/cuadernitologo.png" alt="Cuadernito">
+        <img src="images/cuadernitologo.png" alt="Cuadernito">
         <h1 class="text-center text-login">
-            Ingrese su DNI y contraseña para ingresar a la aplicación
+            Ingrese su email y contraseña para ingresar a la aplicación
         </h1>
     </div>
     
@@ -30,7 +30,7 @@
         @csrf
         <div class="form-column text-center">
             <div class="col">
-            <input type="number" class="form-control" placeholder="DNI">
+            <input type="email" class="form-control" placeholder="Email">
             </div>
             <br>
             <div class="col">

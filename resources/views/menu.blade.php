@@ -13,13 +13,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
          <!-- Styles -->
         <link href="./css/simple.css" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="./storage/images/cuadernitologo.png" />
+        <link rel="icon" type="image/x-icon" href="./images/cuadernitologo.png" />
     </head>
     <body>
     <div class="wrap push">
 
 <a href="#menu" class="menu-link">
-    <img style="width:50px;" src="./storage/images/menu-responsive.png" alt="Menu">
+    <img style="width:50px;" src="images/menu-responsive.png" alt="Menu">
 </a>
 
  
@@ -51,3 +51,17 @@
         <a class="nav-link" href="./logout">Cerrar Sesión</a>
         </nav>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBlT432SDJL7zn6ALXCNeI96UaaTLVyz-8",
+    authDomain: "cuadernito-ba068.firebaseapp.com",
+    databaseURL: "https://cuadernito-ba068.firebaseio.com",
+    projectId: "cuadernito-ba068",
+    storageBucket: "cuadernito-ba068.appspot.com",
+    messagingSenderId: "667313446859"
+  };
+  firebase.initializeApp(config);
+  </script>
