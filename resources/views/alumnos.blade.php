@@ -1,74 +1,56 @@
 @include('menu')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBlT432SDJL7zn6ALXCNeI96UaaTLVyz-8",
+    authDomain: "cuadernito-ba068.firebaseapp.com",
+    databaseURL: "https://cuadernito-ba068.firebaseio.com",
+    projectId: "cuadernito-ba068",
+    storageBucket: "cuadernito-ba068.appspot.com",
+    messagingSenderId: "667313446859"
+  };
+  firebase.initializeApp(config);
+  
+  var ref = firebase.database().ref();
 
-<div class="container">
+  ref.on("value", function(snapshot) {
+    $('div.alumnos').empty();
+   
+   for(var i=0;i < snapshot.val().usuarios.length; i++){
+    var comision = snapshot.val().usuarios[i].comision;
+    
+       if(comision == "Arcoiris"
+        || comision == "Delfines"
+       ){
+        var nombre = snapshot.val().usuarios[i].nombre;
+       var apellido = snapshot.val().usuarios[i].apellido;
+       var foto = snapshot.val().usuarios[i].foto;
+       var celular = snapshot.val().usuarios[i].responsables[0].celular;
+       
+    
+       var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="./storage/images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+'</h5><p class="card-text">'+comision+'</p><a href="#" class="btn btn-primary">Tel: '+celular+'</a></div></div>';
+       $('div.row.alumnos').append(alumno);
+       }
+       
+   }
+
+
+}, function (error) {
+   console.log("Error: " + error.code);
+});
+ </script>
+<div class="container separador">
     <h1>
         Alumnos
     </h1>
     <div class="row alumnos">
     
     
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
+        
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./storage/images/kid.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Thiago Caplan</h5>
-                <p class="card-text">Salita Delfines</p>
-                <a href="#" class="btn btn-primary">Tel: 11-6-766-8342</a>
-            </div>
-        </div>
+        
         
     </div>
 </div>
