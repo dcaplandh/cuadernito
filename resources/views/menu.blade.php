@@ -26,6 +26,21 @@
     <div id="menu">
         <nav class="nav flex-column">
         <a class="nav-link active" href="./">Comunicaciones</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="./" role="button" aria-haspopup="true" aria-expanded="false">Agregar Comunicación</a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="nuevaImagen">Imagen</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="nuevoVideo">Video</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="nuevaUrgencia">Urgencia</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="nuevoTexto">Texto</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="nuevaEncuesta">Encuesta</a>
+            <div class="dropdown-divider"></div>
+            </div>
+        </li>
         <a class="nav-link" href="notificaciones">Notificaciones</a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Eventos</a>

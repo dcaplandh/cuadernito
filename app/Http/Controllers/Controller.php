@@ -16,6 +16,11 @@ class Controller extends BaseController
         return view('index');
     }
 
+    public function nuevaUrgencia()
+    {
+        return view('nuevaUrgencia');
+    }
+
     public function login()
     {
         return view('login');

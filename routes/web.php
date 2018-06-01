@@ -14,6 +14,9 @@
 Route::get('/', 'Controller@index');
 Route::post('/', 'Controller@index');
 
+Route::get('/nuevaUrgencia', 'Controller@nuevaUrgencia');
+
+
 Route::get('/login', 'Controller@login');
 
 Route::get('/alumnos', 'Controller@filtrarPorAlumnos');

@@ -5,7 +5,7 @@
   ref.on("value", function(snapshot) {
     $('div.posteos').empty();
    
-
+    console.log(snapshot.val());
    for(var i=0;i < snapshot.val().usuarios.length; i++){
 
        
@@ -15,11 +15,11 @@
         ){
 
         var post = snapshot.val().usuarios[i].posts;
-        console.log(post);
-        for(var j=0;j < post.length; j++){
-            
+
+        for(var j=post.length-1;j > 0; j--){
+            console.log(post[j]);
             var cual = post[j].tipo;
-            console.log(cual);
+
             if(cual == 'imagen'){
                 var icono = post[j].icono;
                 var titulo = post[j].titulo;
@@ -83,9 +83,9 @@
 
         <div class="container-fluid">
             <div class="row separador">
-
+            <h1 class="h1">Últimas comunicaciones</h1>
                 <div class="col-12 posteos">
-                <h1 class="h1">Últimas comunicaciones</h1>
+                
             
             
            
