@@ -4,7 +4,6 @@
 
   ref.on("value", function(snapshot) {
     $('div.alumnos').empty();
-
     
     
    for(var i=0;i < snapshot.val().usuarios.length; i++){
@@ -22,10 +21,15 @@
             var extra = evento[j].extra;
             var mes = evento[j].mes;
             var dia = evento[j].dia;
-            var relacion = responsable[j].relacion+" de "+snapshot.val().usuarios[i].nombre + ' '+snapshot.val().usuarios[i].apellido;
             
-            var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+' - '+snapshot.val().usuarios[i].comision+'</h5><p class="card-text">'+relacion+'</p><a href="#" class="btn btn-primary">Ver alumno</a></div></div>';
-            $('div.row.alumnos').append(alumno);
+            //var event = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+' - '+snapshot.val().usuarios[i].comision+'</h5><p class="card-text">'+relacion+'</p><a href="#" class="btn btn-primary">Ver alumno</a></div></div>';
+            event = '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start"><div class="d-flex w-100 justify-content-between"><small class="badge badge-primary badge-pill bigger">'+dia+'</small><h5 class="mb-1">'+titulo+'</h5></div><p class="mb-1">'+descripcion+'</p><small>'+extra+'</small></a>';
+
+            if(mes == '06'){
+                $('.junio').append(event);
+            }else if(mes == '07'){
+                $('.julio').append(event);
+            }
          }
        }
        
@@ -42,50 +46,15 @@
 
         <button type="button" class="btn btn-danger separador">Junio</button>
 
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-            <small class="badge badge-primary badge-pill bigger">6</small>
-            <h5 class="mb-1">Reunion de Padres</h5>
-            </div>
-            <p class="mb-1">Nos juntamos para charlar temas importantes de los chicos.</p>
-            <small>Salita Delfines (Aula 2)</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-            <small class="badge badge-primary badge-pill bigger">12</small>
-            <h5 class="mb-1">Excursión al Zoo</h5>
-            </div>
-            <p class="mb-1">Ya hay 3 padres confirmados para acompañarnos.</p>
-            <small>Gracias por las confirmaciones</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-            <small class="badge badge-primary badge-pill bigger">16</small>
-            <h5 class="mb-1">Reunion con la Directora</h5>
-            </div>
-            <p class="mb-1">Presentarse a la mañana parar discutir el comportamiento del alumno.</p>
-            <small>En Direccion a las 9:00</small>
-        </a>
+        <div class="junio">
+        
+
+        </div>
 
         <button type="button" class="btn btn-danger separador">Julio</button>
-
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-            <small class="badge badge-primary badge-pill bigger">9</small>
-            <h5 class="mb-1">Feriado</h5>
-            </div>
-            <p class="mb-1">Dia sin clases por Revolución de Mayo</p>
-            <small>Disfruten!</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-            <small class="badge badge-primary badge-pill bigger">14</small>
-            <h5 class="mb-1">Reunion con la Directora</h5>
-            </div>
-            <p class="mb-1">Presentarse a la mañana parar discutir el comportamiento del alumno.</p>
-            <small>En Direccion a las 9:00</small>
-        </a>
-
+        <div class="julio">
+        
+        </div>
 
 
         </div>
