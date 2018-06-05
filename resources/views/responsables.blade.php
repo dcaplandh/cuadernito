@@ -23,7 +23,7 @@
             var celular = responsable[j].celular;
             var relacion = responsable[j].relacion+" de "+snapshot.val().usuarios[i].nombre + ' '+snapshot.val().usuarios[i].apellido;
             
-            var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+' - '+snapshot.val().usuarios[i].comision+'</h5><p class="card-text">'+relacion+'</p><a href="#" class="btn btn-primary">Tel: '+celular+'</a></div></div>';
+            var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+' - '+snapshot.val().usuarios[i].comision+'</h5><p class="card-text">'+relacion+'</p><a href="#" class="btn btn-primary">Ver alumno</a></div></div>';
             $('div.row.alumnos').append(alumno);
          }
        }

@@ -1,4 +1,40 @@
 @include('menu')
+<script>
+  var ref = firebase.database().ref();
+
+  ref.on("value", function(snapshot) {
+    $('div.alumnos').empty();
+
+    
+    
+   for(var i=0;i < snapshot.val().usuarios.length; i++){
+
+       if(snapshot.val().usuarios[i].id == "1"
+       || snapshot.val().usuarios[i].id == "2"
+       ){
+
+        var evento = snapshot.val().usuarios[i].eventos;
+        
+         for(var j=0;j < evento.length; j++){
+
+            var titulo = evento[j].titulo;
+            var descripcion = evento[j].descripcion;
+            var extra = evento[j].extra;
+            var mes = evento[j].mes;
+            var dia = evento[j].dia;
+            var relacion = responsable[j].relacion+" de "+snapshot.val().usuarios[i].nombre + ' '+snapshot.val().usuarios[i].apellido;
+            
+            var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+' - '+snapshot.val().usuarios[i].comision+'</h5><p class="card-text">'+relacion+'</p><a href="#" class="btn btn-primary">Ver alumno</a></div></div>';
+            $('div.row.alumnos').append(alumno);
+         }
+       }
+       
+   }
+
+}, function (error) {
+   console.log("Error: " + error.code);
+});
+ </script>
 
 <div class="container-fluid notificaciones">
 

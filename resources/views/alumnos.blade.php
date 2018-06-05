@@ -17,7 +17,7 @@
        var celular = snapshot.val().usuarios[i].responsables[0].celular;
        
     
-       var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+'</h5><p class="card-text">'+comision+'</p><a href="#" class="btn btn-primary">Tel: '+celular+'</a></div></div>';
+       var alumno = '<div class="card" style="width: 18rem;"><img class="card-img-top" src="images/'+foto+'" alt="Card image cap"><div class="card-body"><h5 class="card-title">'+nombre+' '+apellido+'</h5><p class="card-text">'+comision+'</p><a href="#" class="btn btn-primary">Ver autorizados para retiro</a></div></div>';
        $('div.row.alumnos').append(alumno);
        }
        
